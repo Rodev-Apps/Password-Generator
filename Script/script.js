@@ -1,5 +1,5 @@
 // Array of special characters to be included in password
-var specialCharacters = [
+var characters = [
   '@',
   '%',
   '+',
@@ -26,10 +26,10 @@ var specialCharacters = [
 ];
 
 // Array of numeric characters to be included in password
-var numericCharacters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+var figures = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 
 // Array of lowercase characters to be included in password
-var lowerCasedCharacters = [
+var letters = [
   'a',
   'b',
   'c',
@@ -59,7 +59,7 @@ var lowerCasedCharacters = [
 ];
 
 // Array of uppercase characters to be included in password
-var upperCasedCharacters = [
+var capitals = [
   'A',
   'B',
   'C',
@@ -97,7 +97,7 @@ var colatePass = []
 
 
 // Function to prompt user for password options
-function getPasswordOptions() {
+function getOptions() {
   userLength = prompt("Enter the length of the password required");
   if (userLength < 8 || userLength > 64) {
     alert("Passwords must be between 8 - 64 characters in length.");
@@ -121,7 +121,9 @@ function getPasswordOptions() {
 
 // Function for getting a random element from an array
 function getRandom(arr) {
-
+  for (var i = 0; i < arr.length; i++) {
+    console.log(arr[i]);
+  }
 }
 
 // Function to generate password with user input
@@ -143,4 +145,20 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener('click', writePassword);
 
-getPasswordOptions()
+getOptions()
+if (lowerChoice === true) {
+  getRandom(letters);
+}
+if (upperChoice === true) {
+  getRandom(capitals);
+}
+if (numChoice === true) {
+  getRandom(figures);
+}
+if (specialChoice === true) {
+  getRandom(characters);
+}
+// getRandom(characters);
+// getRandom(figures);
+// getRandom(letters);
+// getRandom(capitals);
