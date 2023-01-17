@@ -96,7 +96,6 @@ var lowerChoice
 var upperChoice
 var numChoice
 var specialChoice
-var colatePass
 var masterArray = [];
 
 
@@ -105,7 +104,7 @@ function getOptions() {
   userLength = prompt("Enter the length of the password required");
   if (userLength < 8 || userLength > 64) {
     alert("Passwords must be between 8 - 64 characters in length.");
-    return getOptions();
+    return;
   } else if (userLength >= 8 || userLength <= 64) {
     lowerChoice = confirm("Click OK to include lowercase letters");
     upperChoice = confirm("Click OK to include uppercase letters");
@@ -120,12 +119,10 @@ function getOptions() {
       return getOptions();
     }
   }
-  // console log the values of your variables
-  console.log(userLength, lowerChoice, upperChoice, numChoice, specialChoice);
 }
 
 // Function to randomly select a number from min to max
-function getRandomNumber(min, max) {
+function getRandom(min, max) {
   var value = Math.floor(Math.random() * (max - min + 1) + min)
   return value;
 }
@@ -134,10 +131,9 @@ function getRandomNumber(min, max) {
 function generatePass(finalArray) {
   let generatedPassword = '';
 
-  // run this for statement for as many times as the is the length of the password
-  // the user has selected
+  // run this for statement for as many times as the is the length of the password selected by user.
   for (var j = 0; j < userLength; j++) {
-    let randomIndex = getRandomNumber(0, finalArray.length);
+    let randomIndex = getRandom(0, finalArray.length);
     let randomChar = finalArray[randomIndex];
     generatedPassword = generatedPassword.concat(randomChar);
   }
@@ -149,7 +145,8 @@ function generatePass(finalArray) {
 // Write password to the #password input
 function writePass() {
 
-  // prompt the user for which options they want
+  // prompt the user for options and generate array from their choice.
+  // generatePass(masterArray);
   getOptions();
   if (lowerChoice) {
     // getRandom(letters);
@@ -174,26 +171,8 @@ function writePass() {
   passwordText.value = password;
 }
 
-// Function for getting a random element from an array
-// function getRandom(arr) {
-//   for (var i = 0; i < arr.length; i++) {
-//     colatePass = (arr[i]);
-//     console.log(colatePass)
-//   }
-// }
-
-
-
 console.log("-----------------")
-// generatePass(masterArray);
 
 // Add event listener to generate button
 generateBtn.addEventListener('click', writePass);
 
-
-
-
-// getRandom(characters);
-// getRandom(figures);
-// getRandom(letters);
-// getRandom(capitals);
