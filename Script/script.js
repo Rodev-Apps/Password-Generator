@@ -93,7 +93,7 @@ var lowerChoice
 var upperChoice
 var numChoice
 var specialChoice
-var colatePass = []
+var colatePass
 
 
 // Function to prompt user for password options
@@ -108,11 +108,10 @@ function getOptions() {
       numChoice = confirm("Click OK to include numbers");
       specialChoice = confirm("Click OK to include special characters"); 
      
-   
     if (lowerChoice === false, upperChoice === false, numChoice === false, specialChoice === false) {
-      alert("You must accept at least one option; please try again") 
+      alert("You must accept at least one option; please try again"); 
       } else {
-      alert("THANKY YOU for using Password Generator")
+      alert("THANKY YOU for using Password Generator");
     }
   }  console.log(userLength, lowerChoice, upperChoice, numChoice, specialChoice)
 }
@@ -122,12 +121,13 @@ function getOptions() {
 // Function for getting a random element from an array
 function getRandom(arr) {
   for (var i = 0; i < arr.length; i++) {
-    console.log(arr[i]);
+    colatePass = (arr[i]);
+    console.log(colatePass)
   }
 }
 
 // Function to generate password with user input
-function generatePassword() {
+function generatePass() {
 
 }
 
@@ -135,15 +135,15 @@ function generatePassword() {
 var generateBtn = document.querySelector('#generate');
 
 // Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
+function writePass() {
+  var password = generatePass();
   var passwordText = document.querySelector('#password');
 
   passwordText.value = password;
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener('click', writePassword);
+generateBtn.addEventListener('click', writePass);
 
 getOptions()
 if (lowerChoice === true) {
@@ -158,6 +158,7 @@ if (numChoice === true) {
 if (specialChoice === true) {
   getRandom(characters);
 }
+
 // getRandom(characters);
 // getRandom(figures);
 // getRandom(letters);
