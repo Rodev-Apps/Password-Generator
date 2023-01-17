@@ -164,11 +164,20 @@ function writePass() {
     // getRandom(characters);
     masterArray = masterArray.concat(characters);
   }
+  if (userLength) {
+    var changeTitle = document.getElementById("newTitle")
+    changeTitle.textContent = "Your Password Is Ready!"
+    changeTitle.style.textAlign = "center"
+    changeTitle.style.fontSize = "26px"
+    changeTitle.style.lineHeight = "80px"
+    console.log(changeTitle)
+  }
 
   var password = generatePass(masterArray);
   var passwordText = document.querySelector('#password');
 
   passwordText.value = password;
+
 }
 
 console.log("-----------------")
