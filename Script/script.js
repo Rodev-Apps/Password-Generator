@@ -108,14 +108,15 @@ function getOptions() {
       numChoice = confirm("Click OK to include numbers");
       specialChoice = confirm("Click OK to include special characters"); 
      
-    if (lowerChoice === false, upperChoice === false, numChoice === false, specialChoice === false) {
-      alert("You must accept at least one option; please try again"); 
-      } else {
-      alert("THANKY YOU for using Password Generator");
+   
+    // if (lowerChoice === false, upperChoice === false, numChoice === false, specialChoice === false) 
+    if (lowerChoice === true || upperChoice === true || numChoice === true || specialChoice === true) {
+    alert("THANK YOU for using Password Generator")
+    } else {
+    alert("You must accept at least one option; please try again")  
     }
   }  console.log(userLength, lowerChoice, upperChoice, numChoice, specialChoice)
 }
-
 
 
 // Function for getting a random element from an array
@@ -126,10 +127,31 @@ function getRandom(arr) {
   }
 }
 
-// Function to generate password with user input
-function generatePass() {
-
+// getOptions()
+if (lowerChoice === true) {
+  getRandom(letters);
 }
+if (upperChoice === true) {
+  getRandom(capitals);
+}
+if (numChoice === true) {
+  getRandom(figures);
+}
+if (specialChoice === true) {
+  getRandom(characters);
+}
+
+
+// Function to generate password with user input
+function generatePass(word) {
+  for (var j = 0; j < userLength; j++) {
+    console.log([Math.floor(Math.random(word[j]) * colatePass)]);
+  }
+}
+
+console.log("-----------------")
+generatePass(colatePass)
+
 
 // Get references to the #generate element
 var generateBtn = document.querySelector('#generate');
@@ -143,21 +165,11 @@ function writePass() {
 }
 
 // Add event listener to generate button
+generateBtn.addEventListener('click', getOptions);
 generateBtn.addEventListener('click', writePass);
 
-getOptions()
-if (lowerChoice === true) {
-  getRandom(letters);
-}
-if (upperChoice === true) {
-  getRandom(capitals);
-}
-if (numChoice === true) {
-  getRandom(figures);
-}
-if (specialChoice === true) {
-  getRandom(characters);
-}
+
+
 
 // getRandom(characters);
 // getRandom(figures);
