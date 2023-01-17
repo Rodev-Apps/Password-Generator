@@ -102,10 +102,10 @@ var masterArray = [];
 // Function to prompt user for password options
 function getOptions() {
   userLength = prompt("Enter the length of the password required");
-  if (userLength < 8 || userLength > 64) {
-    alert("Passwords must be between 8 - 64 characters in length.");
-    return;
-  } else if (userLength >= 8 || userLength <= 64) {
+  if (userLength < 10 || userLength > 64) {
+    alert("Passwords must be between 10 - 64 characters in length.");
+      return;
+  } else if (userLength >= 10 || userLength <= 64) {
     lowerChoice = confirm("Click OK to include lowercase letters");
     upperChoice = confirm("Click OK to include uppercase letters");
     numChoice = confirm("Click OK to include numbers");
@@ -116,7 +116,7 @@ function getOptions() {
       alert("THANK YOU for using Password Generator")
     } else {
       alert("You must accept at least one option; please try again")
-      return getOptions();
+        return getOptions();
     }
   }
 }
@@ -169,8 +169,7 @@ function writePass() {
     changeTitle.textContent = "Your Password Is Ready!"
     changeTitle.style.textAlign = "center"
     changeTitle.style.fontSize = "26px"
-    changeTitle.style.lineHeight = "80px"
-    console.log(changeTitle)
+    changeTitle.style.lineHeight = "80px"  
   }
 
   var password = generatePass(masterArray);
