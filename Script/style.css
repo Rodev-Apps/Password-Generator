@@ -15,7 +15,7 @@ body,
 body {
   font-family: sans-serif;
   background-color: hsl(185, 23%, 79%);
-  background-image: url(../Images/100308_1.jpg);
+  background-image: url(../Images/100308.jpg);
   background-size: cover;
   background-blend-mode: luminosity;
 }
