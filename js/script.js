@@ -111,11 +111,11 @@ function getOptions() {
     numChoice = confirm("Click OK to include numbers");
     specialChoice = confirm("Click OK to include special characters");
 
-    // if (lowerChoice === false, upperChoice === false, numChoice === false, specialChoice === false) 
+
     if (lowerChoice === true || upperChoice === true || numChoice === true || specialChoice === true) {
-      alert("THANK YOU for using Password Generator")
+      alert("THANK YOU for using Password Generator");
     } else {
-      alert("You must accept at least one option; please try again")
+      alert("You must accept at least one option; please try again");
         return getOptions();
     }
   }
