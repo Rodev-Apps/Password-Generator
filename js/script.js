@@ -104,7 +104,7 @@ function getOptions() {
   userLength = prompt("Enter the length of the password required");
   if (userLength < 10 || userLength > 64) {
     alert("Passwords must be between 10 - 64 characters in length.");
-      return;
+
   } else if (userLength >= 10 || userLength <= 64) {
     lowerChoice = confirm("Click OK to include lowercase letters");
     upperChoice = confirm("Click OK to include uppercase letters");
@@ -113,8 +113,7 @@ function getOptions() {
 
 
     if (lowerChoice === true || upperChoice === true || numChoice === true || specialChoice === true) {
-      alert("THANK YOU for using Password Generator");
-    } else {
+
       alert("You must accept at least one option; please try again");
         return getOptions();
     }
@@ -163,13 +162,6 @@ function writePass() {
   if (specialChoice) {
     // getRandom(characters);
     masterArray = masterArray.concat(characters);
-  }
-  if (userLength) {
-    var changeTitle = document.getElementById("newTitle")
-    changeTitle.textContent = "Your Password Is Ready!"
-    changeTitle.style.textAlign = "center"
-    changeTitle.style.fontSize = "26px"
-    changeTitle.style.lineHeight = "80px"  
   }
 
   var password = generatePass(masterArray);
