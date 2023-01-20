@@ -1,6 +1,5 @@
 // Get references to the #generate element
 var generateBtn = document.querySelector('#generate');
-var changeTitle = document.getElementById("newTitle")
 
 // Array of special characters to be included in password
 var characters = [
@@ -105,8 +104,7 @@ function getOptions() {
   userLength = prompt("Enter the length of the password required");
   if (userLength < 10 || userLength > 64) {
     alert("Passwords must be between 10 - 64 characters in length.");
-    userLength = 0
-    return;
+
   } else if (userLength >= 10 || userLength <= 64) {
     lowerChoice = confirm("Click OK to include lowercase letters");
     upperChoice = confirm("Click OK to include uppercase letters");
@@ -115,12 +113,7 @@ function getOptions() {
 
 
     if (lowerChoice === true || upperChoice === true || numChoice === true || specialChoice === true) {
-      alert("THANK YOU for using Password Generator");
-      changeTitle.textContent = "Your Password Is Ready!"
-      changeTitle.style.textAlign = "center"
-      changeTitle.style.fontSize = "26px"
-      changeTitle.style.lineHeight = "80px"  
-      } else {
+
       alert("You must accept at least one option; please try again");
         return getOptions();
     }
@@ -170,7 +163,6 @@ function writePass() {
     // getRandom(characters);
     masterArray = masterArray.concat(characters);
   }
-
 
   var password = generatePass(masterArray);
   var passwordText = document.querySelector('#password');
