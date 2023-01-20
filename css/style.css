@@ -14,8 +14,8 @@ body,
 
 body {
   font-family: sans-serif;
-  background-color: hsl(189, 11%, 24%);
-  background-image: url(../Images/100308.jpg);
+  background-color: hsl(189, 13%, 22%);
+  background-image: url(../images/background_1.jpg);
   background-size: cover;
   background-blend-mode: luminosity;
 }
@@ -28,7 +28,6 @@ body {
 
 header {
   text-align: center;
-  N ;
   padding: 20px;
   padding-top: 0px;
   color: hsl(185, 23%, 79%);
