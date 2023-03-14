@@ -11,6 +11,9 @@ The “Password Generator” App should be able to run on all browsers. It is im
 This Repo is made up of the core files and folders related to the task. I have added comments to all the relevant sections of the code, highlighting key areas and the expected result derived from it. The content comprise only that related to the task and I have kept the interface very simple and straight forward to use. Simply click on the button to start, follow the prompts, and refresh the page to start over; it’s that easy. Click [**here.**](https://rhanciles.github.io/Password-Generator/)
  to begin.
 
+ ## Mock-Up
+![Here is a screen-shot of what the interface looks like:](./assets/generate_password.jpg)
+
 ## Feedback
 Please feel free to reach out or drop a comment here if you have any questions, queries or suggestions. Otherwise, you can find me on the Slack platform Pod 5, just search for Rod.
 
