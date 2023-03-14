@@ -137,7 +137,7 @@ function getRandom(min, max) {
 function generatePass(finalArray) {
   let generatedPassword = '';
 
-  // run this for statement for as many times as the is the length of the password selected by user.
+  // run this for statement for as many times as the is the length of the password selected by user to generate random password
   for (var j = 0; j < userLength; j++) {
     let randomIndex = getRandom(0, finalArray.length);
     let randomChar = finalArray[randomIndex];
@@ -167,7 +167,7 @@ function writePass() {
     // writePass()
   }
 
-  console.log("Point 5")
+  // console.log("Point 5")
   // prompt the user for options and generate array from their choice.
   // generatePass(masterArray);
   getOptions();
@@ -196,14 +196,7 @@ function writePass() {
   console.log("Point 7")
   if (userLength) {
     generateBtn.textContent = "Copy Password" 
-  //   generateBtn.textContent = "Start Again" 
-  //   function reStart (refresh) {
-  //     refresh = location.reload(true)
-  //   } 
-  //   generateBtn.addEventListener('click', reStart);
-  //   generateBtn.preventDefault();
-  //   // passwordText.value = " ";
-  //   // writePass()
+  
   }
  
 }
