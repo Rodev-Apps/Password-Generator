@@ -98,7 +98,7 @@ var numChoice
 var specialChoice
 var masterArray = [];
 
-
+console.log("Point 1")
 // Function to prompt user for password options
 function getOptions() {
   userLength = prompt("Enter the length of the password required");
@@ -111,7 +111,7 @@ function getOptions() {
     numChoice = confirm("Click OK to include numbers");
     specialChoice = confirm("Click OK to include special characters");
 
-
+    console.log("Point 2")
     if (lowerChoice === true || upperChoice === true || numChoice === true || specialChoice === true) {
 
       alert("You must accept at least one option; please try again");
@@ -119,7 +119,7 @@ function getOptions() {
     }
   }
 }
-
+console.log("Point 3")
 // Function to randomly select a number from min to max
 function getRandom(min, max) {
   var value = Math.floor(Math.random() * (max - min + 1) + min)
@@ -140,10 +140,27 @@ function generatePass(finalArray) {
   // now that you have your password, return it from this function
   return generatedPassword;
 }
-
+console.log("Point 4")
 // Write password to the #password input
 function writePass() {
 
+
+  // generateBtn.textContent = "Copy Password" 
+
+  if (userLength) {
+    
+    navigator.clipboard.writeText(document.querySelector('#password').value)
+    generateBtn.textContent = "Create Another" 
+    function reStart (refresh) {
+      refresh = location.reload(true)
+    } 
+    generateBtn.addEventListener('click', reStart);
+    generateBtn.preventDefault();
+    // passwordText.value = " ";
+    // writePass()
+  }
+
+  console.log("Point 5")
   // prompt the user for options and generate array from their choice.
   // generatePass(masterArray);
   getOptions();
@@ -164,11 +181,26 @@ function writePass() {
     masterArray = masterArray.concat(characters);
   }
 
+
+  console.log("Point 6")
+  
   var password = generatePass(masterArray);
   var passwordText = document.querySelector('#password');
 
   passwordText.value = password;
-
+  console.log("Point 7")
+  if (userLength) {
+    generateBtn.textContent = "Copy Password" 
+  //   generateBtn.textContent = "Start Again" 
+  //   function reStart (refresh) {
+  //     refresh = location.reload(true)
+  //   } 
+  //   generateBtn.addEventListener('click', reStart);
+  //   generateBtn.preventDefault();
+  //   // passwordText.value = " ";
+  //   // writePass()
+  }
+ 
 }
 
 console.log("-----------------")
@@ -176,3 +208,4 @@ console.log("-----------------")
 // Add event listener to generate button
 generateBtn.addEventListener('click', writePass);
 
+console.log("Point 8")
