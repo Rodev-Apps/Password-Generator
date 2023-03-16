@@ -14,6 +14,8 @@ This Repo is made up of the core files and folders related to the task. I have a
  ## Mock-up
 ![Here is a screen-shot of what the interface looks like:](./assets/generate_password.jpg)
 
+Click [**here.**](https://rhanciles.github.io/Password-Generator/) to check it out.
+
 ## Feedback
 Please feel free to reach out or drop a comment here if you have any questions, queries or suggestions. Otherwise, you can find me on the Slack platform Pod 5, just search for Rod.
 
